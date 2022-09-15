@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>News API</title>
+</head>
+
+<body class="bg-black">
+    <header class="header py-4">
+        <div class="w-full px-5 mx-auto max-w-7xl  bg-opacity-50">
+            <div class="header-inner d-flex justify-content-between align-items-center">
+                <a href="./index.html" class="logo">
+                    <img class="logo-img" src="./imgs/images.png" alt="" width="150" height="80">
+                </a>
+
+                <div class="navbor">
+                    <button class="btn btn-primary" type="button">Sign in</button>
+
+                    <button class="button btn btn-outline-danger ms-4 gamburger">
+                        <i class="bi bi-bookmark-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main bg-black">
+        <section class="hero w-full px-5 mx-auto max-w-7xl">
+            <form class="form row mb-3">
+                <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">News title</label>
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="News title" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="validationCustom04" class="form-label">News language</label>
+                    <select class="form-select" id="validationCustom04" required>
+                      <option hidden value="">Choose...</option>
+                      <option value="relevancy">Relevancy</option>
+                      <option value="popularity">Popularity</option>
+                      <option value="publishedAt">PublishedAt</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="validationCustom04" class="form-label">News sortBy</label>
+                    <select class="form-select" id="validationCustom04" required>
+                    <option hidden value="">Choose...</option>
+                        <option value="en">EN</option>
+                        <option value="ru">RU</option>
+                        <option value="fr">FR</option>
+                        <option value="it">IT</option>
+                        <option value="pt">PT</option>
+                    </select>
+                </div>
+            </form>
+            <div class="w-full mx-auto max-w-7xl">
+                <ul class="movies-list list-none grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    <!-- <li class="list-item sm:p-2 hover:scale-105  transition linear duration-700">
+                        <div class="cart rounded-lg bg-slate-300 " style="min-height: 400px;">
+                            <img class="w-full object-cover h-72" src="./imgs/img3.webp" alt="">
+                            <div class="card-body p-1">
+                                <h3 class="title font-sans font-bold text-center text-xl">Header</h3>
+                                <p class="text text-center text-lg text-stone-700">La Verdad Noticias</p>
+
+                                <div class="card-footer flex justify-between  items-center mt-2 px-1">
+                                    <a href="" class="link text-slate-800 font-medium hover:text-cyan-500 transition linear duration-700">Link</a>
+                                    <button class="modal-oppen px-4 py-2 bg-slate-500 rounded-lg text-white hover:bg-slate-700 tramsition linear duration-700">
+                                        More info
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+
+
+                <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                    aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="title" id="exampleModalToggleLabel">Movie</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            </div>
+
+                            <div class="modal-body d-flex justify-content-between ">
+                                <img class="modal-img" src="./imgs/taatoo-png-2.png" width="300px" height="100px"
+                                    alt="">
+                                <div class="modal-body-content text-center px-2">
+                                    <h1 class="modal-title fs-4 fw-bold"></h1>
+                                    <p class="modal-info"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <template id="js-template">
+        <li class="list-item sm:p-2 hover:scale-105  transition linear duration-700">
+            <div class="cart rounded-lg bg-slate-300 " style="min-height: 400px;">
+                <img class="js-img w-full object-fill h-72" src="./imgs/img3.webp" alt="">
+                <div class="card-body  p-1 flex flex-col  justify-between" style="min-height: 100px;">
+                    <h3 class="h-30 js-title font-sans font-bold text-center text-xl">Header</h3>
+                    <p class="js-name text text-center text-lg text-stone-700">La Verdad Noticias</p>
+
+                    <div class=" card-footer flex justify-between  items-center mt-2 px-1">
+                        <a href=""
+                            class="js-link text-slate-800 font-medium hover:text-cyan-500 transition linear duration-700">Link</a>
+                        <button data-bs-toggle="modal" href="#exampleModalToggle"
+                            class="js-more-btn modal-oppen px-4 py-2 bg-slate-500 rounded-lg text-white hover:bg-slate-700 tramsition linear duration-700"
+                            type="button">
+                            More info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </template>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
