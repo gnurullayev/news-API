@@ -47,7 +47,7 @@ function renderNews (news) {
 }
 
 
-const FETCH_URL = "https://newsapi.org/v2/everything?q=tesla&from=2022-08-15&sortBy=publishedAt&apiKey=b1e7ffcf8b66448ab6add09db6a01190"
+const FETCH_URL = "http://newsapi.org/v2/everything?q=tesla&from=2022-08-15&sortBy=publishedAt&apiKey=b1e7ffcf8b66448ab6add09db6a01190"
 
 let fetchingNews = async () => {
     try{
